@@ -29,4 +29,7 @@ urlpatterns = [
     path("registrarAlumno/", FormularioAlumnoView.index, name="registrarAlumno"),
     path("guardarAlumno/", FormularioAlumnoView.procesar_formulario, name="guardarAlumno"),
     path("listarAlumnos/", FormularioAlumnoView.listar_alumnos, name="listarAlumnos"),
+    path("editarAlumnos/<int:id_alumno>", FormularioAlumnoView.edit, name="editarAlumnos"),
+    path("actualizarAlumnos/<int:id_alumno>", FormularioAlumnoView.actualizar_alumno, name="actualizarAlumnos"),
+    path("eliminarAlumnos/<int:id_alumno>", FormularioAlumnoView.delete, name="eliminarAlumnos"),
 ]
