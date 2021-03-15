@@ -16,20 +16,20 @@ Including another URLconf
 #from django.contrib import admin
 from django.urls import path
 
-from Models.Alumno.views import FormularioAlumnoView
+from Models.Producto.views import FormularioProductoView, FormularioMarcaView, FormularioCategoriaView
 from Views.HomeView import HomeView
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path("", HomeView.home, name="home"),
-    path("pagina/", HomeView.pagina1, name="pagina1"),
-    path("pagina2/<int:parametro1>", HomeView.pagina2, name="pagina2"),
-    path("pagina3/<int:parametro1>/<int:parametro2>", HomeView.pagina3, name="pagina3"),
-    path("formulario/", HomeView.formulario, name="formulario"),
-    path("registrarAlumno/", FormularioAlumnoView.index, name="registrarAlumno"),
-    path("guardarAlumno/", FormularioAlumnoView.procesar_formulario, name="guardarAlumno"),
-    path("listarAlumnos/", FormularioAlumnoView.listar_alumnos, name="listarAlumnos"),
-    path("editarAlumnos/<int:id_alumno>", FormularioAlumnoView.edit, name="editarAlumnos"),
-    path("actualizarAlumnos/<int:id_alumno>", FormularioAlumnoView.actualizar_alumno, name="actualizarAlumnos"),
-    path("eliminarAlumnos/<int:id_alumno>", FormularioAlumnoView.delete, name="eliminarAlumnos"),
+    path("registrarProducto/", FormularioProductoView.index, name="registrarProducto"),
+    path("registrarMarca/", FormularioMarcaView.index, name="registrarMarca"),
+    path("registrarCategoria/", FormularioCategoriaView.index, name="registrarCategoria"),
+    path("guardarProducto/", FormularioProductoView.procesar_formulario, name="guardarProducto"),
+    path("listarProductos/", FormularioProductoView.listar_productos, name="listarProductos"),
+    path("listarMarca/", FormularioProductoView.listar_marca, name="listarMarca"),
+    path("listarCategoria", FormularioProductoView.listar_categoria, name="listarCategoria"),
+    path("editarProductos/<int:id_producto>", FormularioProductoView.edit, name="editarProductos"),
+    path("actualizarProductos/<int:id_producto>", FormularioProductoView.actualizar_producto, name="actualizarProductos"),
+    path("eliminarProductos/<int:id_producto>", FormularioProductoView.delete, name="eliminarProductos"),
 ]

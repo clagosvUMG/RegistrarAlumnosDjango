@@ -7,19 +7,19 @@
         </div>
     {% endif %}
 
-    <h1> Registro de Alumnos </h1>
+    <h1> Registro de Productos </h1>
 
-    <form action="{% url "guardarAlumno" %}" method="POST">
+    <form action="{% url "guardarProducto" %}" method="POST">
         {% csrf_token %}
         {% if mensaje %}
             <div class="alert alert-success" role="alert">
-              Alumno registrado exitosamente!
+              Producto registrado exitosamente!
             </div>
         {% endif %}
 
         {{ form|crispy }}
 
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a class="btn btn-warning" href="{% url "listarAlumnos" %}">Cancelar</a>
+        <a class="btn btn-warning" href="{% url "listarProductos" %}">Cancelar</a>
     </form>
 {% endblock %}
